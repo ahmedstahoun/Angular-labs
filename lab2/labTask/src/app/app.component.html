@@ -1,0 +1,21 @@
+<h2 class="fw-bold text-center text-info my-2">PART 1</h2>
+
+<div id="inputContainer" class="mb-3 d-flex flex-column align-items-center">
+  <label for="exampleInputEmail1" class="form-label"
+    >Enter Your Full Name</label
+  >
+  <input
+    type="text"
+    class="form-control m-5"
+    id="exampleInputEmail1"
+    aria-describedby="emailHelp"
+    placeholder="Full Name"
+    [(ngModel)]="fullName"
+  />
+  <p>Data: {{ fullName }}</p>
+  <button type="button" class="btn btn-primary" value="Reset" (click)="reset()">
+    Reset
+  </button>
+</div>
+
+<app-slider></app-slider>

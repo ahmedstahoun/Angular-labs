@@ -1,0 +1,34 @@
+<div class="card-body my-2 py-3">
+  <h2 class="fw-bold text-center text-info my-2">PART 2</h2>
+
+  <div class="wrapper text-center">
+    <img [src]="imageSource[current]" />
+  </div>
+
+  <div class="d-flex justify-content-center mt-4">
+    <input
+      type="button"
+      class="btn btn-info mx-2"
+      value="Prev"
+      (click)="prevImg()"
+    />
+    <input
+      type="button"
+      class="btn btn-info mx-2"
+      value="Next"
+      (click)="nextImg()"
+    />
+    <input
+      type="button"
+      class="btn btn-info mx-2"
+      value="Slide"
+      (click)="startSlide()"
+    />
+    <input
+      type="button"
+      class="btn btn-info mx-2"
+      value="Stop"
+      (click)="stopSlide()"
+    />
+  </div>
+</div>
