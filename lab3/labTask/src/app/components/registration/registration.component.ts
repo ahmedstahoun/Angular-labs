@@ -12,7 +12,7 @@ export class RegistrationComponent {
   @Output() myEvent = new EventEmitter();
 
   add() {
-    if (+this.age > 20 && +this.age < 40)
+    if (+this.age >= 20 && +this.age <= 40)
       this.myEvent.emit({ name: this.name, age: this.age });
 
     this.name = '';
