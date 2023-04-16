@@ -1,0 +1,22 @@
+<div>
+  <p>Table</p>
+</div>
+
+<div id="tableContainer" class="m-auto w-50">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of DataFromParent; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
