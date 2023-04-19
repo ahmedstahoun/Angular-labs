@@ -1,0 +1,16 @@
+<div class="fw-bold text-center text-info my-2"><p>Student Details</p></div>
+
+<div *ngIf="student; else falseBlock" class="alert alert-info mt-5 m-auto w-50">
+  <p>Name:{{ student.name }}</p>
+  <!-- <p>studentName:{{student.studentname}}</p>
+  <p>Website:{{student.website}}</p> -->
+  <p>Email:{{ student.email }}</p>
+  <!-- <p>Address:{{student.address.street}}, {{student.address.city}}</p> -->
+  <p>Phone:{{ student.phone }}</p>
+</div>
+
+<ng-template #falseBlock>
+  <div class="spinner-border text-success m-auto" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</ng-template>

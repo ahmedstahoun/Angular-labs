@@ -1,0 +1,91 @@
+<div class="fw-bold text-center text-info my-2">
+  <p>Students</p>
+</div>
+
+<div id="tableContainer" class="m-auto w-50">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.email }}</td>
+        <td class="d-flex flex-row gap-2">
+          <a
+            class="btn btn-outline-info"
+            value="view"
+            routerLink="/students/{{ student.id }}"
+            >View</a
+          >
+          <a
+            class="btn btn-outline-primary"
+            value="view"
+            routerLink="students/{{ student.id }}/edit"
+            >Update</a
+          >
+          <button
+            id="{{ student.id }}"
+            type="submit"
+            class="btn btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            (click)="confirmDelete($event)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Delete Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">delete user</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Are you sure you want to delete this user?</div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+          id="modalNo"
+        >
+          no
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          (click)="deleteEvent($event)"
+        >
+          yes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

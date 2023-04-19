@@ -1,0 +1,69 @@
+<div class="fw-bold text-center text-info my-2"><p>Registration</p></div>
+<div id="formContainer" class="w-50 m-auto">
+  <form
+    (ngSubmit)="add(name.value, age.value, email.value, phone.value)"
+    [formGroup]="validationForm"
+    class="form"
+  >
+    <div class="mb-3">
+      <label for="name" class="form-label">Enter Name</label>
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        id="name"
+        aria-describedby="emailHelp"
+        placeholder="Name"
+        #name
+      />
+      <div class="mt-1" *ngIf="!nameValid">
+        <p>enter a name greater than three characters.</p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="age" class="form-label">Enter Age</label>
+      <input
+        formControlName="age"
+        type="text"
+        class="form-control"
+        id="age"
+        placeholder="Age"
+        #age
+      />
+      <div class="mt-1" *ngIf="!ageValid">Enter Age between 20 and 40.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Enter Email</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Email"
+        #email
+      />
+      <div class="mt-1" *ngIf="!emailValid">
+        <p>Enter correct Email</p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Enter phone</label>
+      <input
+        formControlName="phone"
+        type="number"
+        class="form-control"
+        id="phone"
+        placeholder="Phone"
+        #phone
+      />
+      <div class="mt-1" *ngIf="!phoneValid">
+        <p>Enter correct 11 number</p>
+      </div>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Add" />
+  </form>
+</div>
